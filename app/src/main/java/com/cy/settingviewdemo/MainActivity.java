@@ -1,21 +1,29 @@
 package com.cy.settingviewdemo;
 
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
-import android.view.ViewGroup;
-import android.widget.LinearLayout;
 
-public class MainActivity extends AppCompatActivity {
-    LinearLayout mllSettingsContainerAct;
+import com.cy.host.mvp.BaseMVPActivity;
+import com.cy.settings.SettingsView;
+
+public class MainActivity extends BaseMVPActivity {
+    SettingsView mSettingView;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setTitle("demo");
         setContentView(R.layout.activity_main);
-        mllSettingsContainerAct=findViewById(R.id.mllSettingsContainerAct);
+        mSettingView=findViewById(R.id.mSettingView);
+        mSettingView.setAdapter(new SettingsAdapter(this));
 
-        ISettings adapter=new SettingsAdapter();
-        ViewGroup viewGroup = adapter.build();
-        mllSettingsContainerAct.addView(viewGroup);
+    }
+
+    @Override
+    protected void baseInit1Data() {
+
+    }
+
+    @Override
+    protected void baseInit2View() {
+
     }
 }

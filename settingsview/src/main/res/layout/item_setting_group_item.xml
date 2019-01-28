@@ -1,72 +1,76 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="54dp"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:clickable="true"
-    android:descendantFocusability="blocksDescendants">
+    android:descendantFocusability="blocksDescendants"
+    android:minHeight="54dp">
 
     <ImageView
-        android:id="@+id/icon"
+        android:id="@+id/ivIcon"
         android:layout_width="21dp"
         android:layout_height="21dp"
         android:layout_centerVertical="true"
         android:layout_marginLeft="15dp"
-        android:src="@drawable/ic_launcher_background"/>
+        tools:src="@drawable/icon_arrow_right"
+        android:visibility="gone"
+        />
 
     <TextView
 
-        android:textSize="16dp"
-        android:id="@+id/title"
-        android:textColor="@android:color/black"
+        android:id="@+id/tvTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerVertical="true"
         android:layout_marginLeft="15dp"
-        android:layout_toRightOf="@+id/icon"
-        android:text="词库管理"/>
+        android:layout_toRightOf="@+id/ivIcon"
+        tools:text="菜单项"
+        android:textColor="@android:color/black"
+        android:textSize="16dp" />
 
     <android.support.v7.widget.SwitchCompat
-        android:id="@+id/switch_button"
+        android:id="@+id/switchCompat"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentRight="true"
         android:layout_centerVertical="true"
         android:layout_marginRight="15dp"
-        android:clickable="false"
         android:focusable="false"
+        android:visibility="gone"
         tools:visibility="visible"
-        android:visibility="gone"/>
-
-    <ImageView
-        android:id="@+id/indicator"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentRight="true"
-        android:layout_centerVertical="true"
-        android:layout_marginRight="15dp"
-        android:src="@drawable/icon_arrow_right"
+        app:showText="false"
         />
 
+    <ImageView
+        android:id="@+id/ivArrow"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:layout_marginRight="15dp"
+        android:src="@drawable/icon_arrow_right" />
+
     <TextView
-        android:id="@+id/sub_title"
+        android:id="@+id/tvSubTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerVertical="true"
         android:layout_marginRight="10dp"
-        android:layout_toLeftOf="@+id/indicator"
-        android:text="词库管理"
-        android:textSize="13dp"
+        android:layout_toLeftOf="@+id/ivArrow"
+        tools:text="子标题"
         android:textColor="#ff898989"
-        tools:visibility="visible"
-        android:visibility="gone"/>
+        android:textSize="13dp"
+        android:visibility="gone"
+        tools:visibility="visible" />
 
     <View
-        android:id="@+id/divider"
+        android:id="@+id/vDivider"
         android:layout_width="match_parent"
         android:layout_height="1px"
-        android:layout_alignLeft="@+id/title"
+        android:layout_alignLeft="@+id/tvTitle"
         android:layout_alignParentBottom="true"
-        android:background="#ff272727"/>
+        android:background="#ff272727" />
+
 </RelativeLayout>

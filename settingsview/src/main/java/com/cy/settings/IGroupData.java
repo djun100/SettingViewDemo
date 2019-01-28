@@ -1,4 +1,4 @@
-package com.cy.settingviewdemo;
+package com.cy.settings;
 
 import java.util.List;
 
