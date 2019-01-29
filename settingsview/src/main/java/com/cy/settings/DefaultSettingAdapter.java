@@ -62,6 +62,12 @@ public abstract class DefaultSettingAdapter extends BaseSettingAdapter {
         bindViewMore(position, itemView, groupData, subItemData);
     }
 
+    /**margin padding clicklistener switchcompat`s event and so on
+     * @param position
+     * @param itemView
+     * @param groupData
+     * @param subItemData
+     */
     public abstract void bindViewMore(int position, View itemView,
                                       IGroupData groupData, ISubItemData subItemData);
 }
