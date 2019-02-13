@@ -2,9 +2,11 @@ package com.cy.settings;
 
 public class DefaultSubItemData implements ISubItemData {
     public String title;
+    public String content;
     public String subTitle;
     public int drawableLeft;
     public boolean showSwitch;
+    public boolean showCheckbox;
 
     private DefaultSubItemData() {
     }
@@ -19,6 +21,15 @@ public class DefaultSubItemData implements ISubItemData {
 
     public DefaultSubItemData setTitle(String title) {
         this.title = title;
+        return this;
+    }
+
+    public String getContent() {
+        return content;
+    }
+
+    public DefaultSubItemData setContent(String content) {
+        this.content = content;
         return this;
     }
 
@@ -46,6 +57,15 @@ public class DefaultSubItemData implements ISubItemData {
 
     public DefaultSubItemData setShowSwitch(boolean showSwitch) {
         this.showSwitch = showSwitch;
+        return this;
+    }
+
+    public boolean getShowCheckbox() {
+        return showCheckbox;
+    }
+
+    public DefaultSubItemData setShowCheckbox(boolean showCheckbox) {
+        this.showCheckbox = showCheckbox;
         return this;
     }
 }

@@ -18,39 +18,73 @@
         android:visibility="gone"
         />
 
-    <TextView
-
-        android:id="@+id/tvTitle"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+    <LinearLayout
+        android:id="@+id/llTitle"
         android:layout_centerVertical="true"
+        android:orientation="vertical"
         android:layout_marginLeft="15dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="7dp"
         android:layout_toRightOf="@+id/ivIcon"
-        tools:text="菜单项"
-        android:textColor="@android:color/black"
-        android:textSize="16dp" />
+        android:layout_width="match_parent"
+        android:layout_toLeftOf="@+id/flRight"
+        android:layout_height="wrap_content">
 
-    <android.support.v7.widget.SwitchCompat
-        android:id="@+id/switchCompat"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        <TextView
+            android:id="@+id/tvTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:text="菜单项"
+            android:textColor="@android:color/black"
+            android:textSize="16dp"/>
+
+        <TextView
+            android:id="@+id/tvContent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tvTitle"
+            tools:text="菜单项子标题"
+            android:layout_marginTop="5dp"
+            android:textColor="#7A7E83"
+            android:visibility="gone"
+            android:textSize="14dp"/>
+    </LinearLayout>
+
+
+    <FrameLayout
+        android:id="@+id/flRight"
         android:layout_alignParentRight="true"
         android:layout_centerVertical="true"
         android:layout_marginRight="15dp"
-        android:focusable="false"
-        android:visibility="gone"
-        tools:visibility="visible"
-        app:showText="false"
-        />
-
-    <ImageView
-        android:id="@+id/ivArrow"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentRight="true"
-        android:layout_centerVertical="true"
-        android:layout_marginRight="15dp"
-        android:src="@drawable/icon_arrow_right" />
+        android:layout_height="wrap_content">
+
+        <android.support.v7.widget.SwitchCompat
+            android:id="@+id/switchCompat"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:focusable="false"
+            android:visibility="gone"
+            tools:visibility="visible"
+            app:showText="false"
+            />
+
+        <CheckBox
+            android:id="@+id/checkbox"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:focusable="false"
+            android:visibility="gone"
+            tools:visibility="visible"
+            />
+
+        <ImageView
+            android:id="@+id/ivArrow"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/icon_arrow_right"/>
+    </FrameLayout>
+
 
     <TextView
         android:id="@+id/tvSubTitle"
@@ -58,7 +92,7 @@
         android:layout_height="wrap_content"
         android:layout_centerVertical="true"
         android:layout_marginRight="10dp"
-        android:layout_toLeftOf="@+id/ivArrow"
+        android:layout_toLeftOf="@+id/flRight"
         tools:text="子标题"
         android:textColor="#ff898989"
         android:textSize="13dp"
@@ -69,7 +103,7 @@
         android:id="@+id/vDivider"
         android:layout_width="match_parent"
         android:layout_height="1px"
-        android:layout_alignLeft="@+id/tvTitle"
+        android:layout_alignLeft="@+id/llTitle"
         android:layout_alignParentBottom="true"
         android:background="#ff272727" />
 

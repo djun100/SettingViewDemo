@@ -4,9 +4,9 @@ import android.app.Activity;
 import android.support.v7.widget.SwitchCompat;
 import android.text.TextUtils;
 import android.view.View;
+import android.widget.CheckBox;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.cy.settingsview.R;
 
@@ -36,8 +36,10 @@ public abstract class DefaultSettingAdapter extends BaseSettingAdapter {
 
         ImageView ivIcon=itemView.findViewById(R.id.ivIcon);
         TextView tvTitle = itemView.findViewById(R.id.tvTitle);
+        TextView tvContent = itemView.findViewById(R.id.tvContent);
         View divider=itemView.findViewById(R.id.vDivider);
         SwitchCompat switchCompat = itemView.findViewById(R.id.switchCompat);
+        CheckBox checkBox=itemView.findViewById(R.id.checkbox);
         TextView tvSubTitle = itemView.findViewById(R.id.tvSubTitle);
         ImageView ivArrow=itemView.findViewById(R.id.ivArrow);
 
@@ -46,12 +48,20 @@ public abstract class DefaultSettingAdapter extends BaseSettingAdapter {
         if (position == groupData.getSubItems().size() - 1) {
             divider.setVisibility(View.GONE);
         }
+        if (!TextUtils.isEmpty(((DefaultSubItemData) subItemData).content)){
+            tvContent.setVisibility(View.VISIBLE);
+            tvContent.setText(((DefaultSubItemData) subItemData).content);
+        }
         if (((DefaultSubItemData) subItemData).drawableLeft>0){
             ivIcon.setImageResource(((DefaultSubItemData) subItemData).drawableLeft);
             ivIcon.setVisibility(View.VISIBLE);
         }
         if (((DefaultSubItemData) subItemData).showSwitch){
             switchCompat.setVisibility(View.VISIBLE);
+            ivArrow.setVisibility(View.GONE);
+        }
+        if (((DefaultSubItemData) subItemData).showCheckbox){
+            checkBox.setVisibility(View.VISIBLE);
             ivArrow.setVisibility(View.GONE);
         }
         if (!TextUtils.isEmpty(((DefaultSubItemData) subItemData).subTitle)){

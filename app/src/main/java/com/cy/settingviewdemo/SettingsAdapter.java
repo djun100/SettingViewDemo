@@ -32,10 +32,16 @@ public class SettingsAdapter extends DefaultSettingAdapter {
         groupData2
                 .addSubItem(DefaultSubItemData.create().setTitle("收藏")
                 .setShowSwitch(true))
+
                 .addSubItem(DefaultSubItemData.create().setTitle("其他")
                         .setDrawableLeft(R.drawable.ic_launcher_background))
+
                 .addSubItem(DefaultSubItemData.create().setTitle("相册")
-                .setSubTitle("本地相册"));
+                .setSubTitle("本地相册"))
+
+                .addSubItem(DefaultSubItemData.create().setTitle("流浪地球.rmvb")
+                .setContent("/Users/cy/cy/projects/android/CommonLayout/app/src/main/java/com/cy/commonlayout/MainActivity.java")
+                        .setShowCheckbox(true));
         data.add(groupData2);
 
         return data;
