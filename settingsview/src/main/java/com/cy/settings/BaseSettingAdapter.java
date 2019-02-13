@@ -11,6 +11,7 @@ import java.util.List;
 
 public abstract class BaseSettingAdapter implements ISettings {
 
+
     /**
      * inflate switchcompat 所在布局所用的上下文必须为activity上下文，否则不显示
      */
@@ -44,4 +45,7 @@ public abstract class BaseSettingAdapter implements ISettings {
         return viewGroups;
     }
 
+    public Activity baseGetActivity() {
+        return mActivity;
+    }
 }
