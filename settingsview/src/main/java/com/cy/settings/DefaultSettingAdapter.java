@@ -75,6 +75,9 @@ public abstract class DefaultSettingAdapter extends BaseSettingAdapter {
             mIvArrow.setVisibility(View.GONE);
             mCheckBox.setChecked(((DefaultSubItemData) subItemData).checkboxChecked);
         }
+        if (((DefaultSubItemData) subItemData).showArrow){
+            mIvArrow.setVisibility(View.VISIBLE);
+        }
         if (!TextUtils.isEmpty(((DefaultSubItemData) subItemData).subTitle)){
             mTvSubTitle.setVisibility(View.VISIBLE);
             mTvSubTitle.setText(((DefaultSubItemData) subItemData).subTitle);

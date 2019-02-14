@@ -64,6 +64,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:focusable="false"
+            android:layout_marginLeft="10dp"
             android:visibility="gone"
             tools:visibility="visible"
             app:showText="false"
@@ -75,11 +76,15 @@
             android:layout_height="wrap_content"
             android:focusable="false"
             android:visibility="gone"
+            android:layout_marginLeft="10dp"
             tools:visibility="visible"
             />
 
         <ImageView
+            android:visibility="gone"
+            tools:visibility="visible"
             android:id="@+id/ivArrow"
+            android:layout_marginLeft="10dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:src="@drawable/icon_arrow_right"/>
@@ -91,7 +96,6 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerVertical="true"
-        android:layout_marginRight="10dp"
         android:layout_toLeftOf="@+id/flRight"
         tools:text="子标题"
         android:textColor="#ff898989"
