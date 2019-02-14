@@ -12,14 +12,6 @@ import com.cy.settingsview.R;
 
 public abstract class DefaultSettingAdapter extends BaseSettingAdapter {
 
-    public ImageView mIvIcon;
-    public TextView mTvTitle;
-    public TextView mTvContent;
-    public View mDivider;
-    public SwitchCompat mSwitchCompat;
-    public CheckBox mCheckBox;
-    public TextView mTvSubTitle;
-    public ImageView mIvArrow;
 
     public DefaultSettingAdapter(Activity activity) {
         super(activity);
@@ -44,14 +36,14 @@ public abstract class DefaultSettingAdapter extends BaseSettingAdapter {
     public void bindView(int position, View itemView,
                          IGroupData groupData, ISubItemData subItemData) {
 
-         mIvIcon =itemView.findViewById(R.id.ivIcon);
-         mTvTitle = itemView.findViewById(R.id.tvTitle);
-         mTvContent = itemView.findViewById(R.id.tvContent);
-         mDivider =itemView.findViewById(R.id.vDivider);
-         mSwitchCompat = itemView.findViewById(R.id.switchCompat);
-         mCheckBox =itemView.findViewById(R.id.checkbox);
-         mTvSubTitle = itemView.findViewById(R.id.tvSubTitle);
-         mIvArrow =itemView.findViewById(R.id.ivArrow);
+        ImageView mIvIcon =itemView.findViewById(R.id.ivIcon);
+        TextView mTvTitle = itemView.findViewById(R.id.tvTitle);
+        TextView mTvContent = itemView.findViewById(R.id.tvContent);
+        View mDivider =itemView.findViewById(R.id.vDivider);
+        SwitchCompat mSwitchCompat = itemView.findViewById(R.id.switchCompat);
+        CheckBox mCheckBox =itemView.findViewById(R.id.checkbox);
+        TextView mTvSubTitle = itemView.findViewById(R.id.tvSubTitle);
+        ImageView mIvArrow =itemView.findViewById(R.id.ivArrow);
 
 
         mTvTitle.setText(((DefaultSubItemData) subItemData).title);
