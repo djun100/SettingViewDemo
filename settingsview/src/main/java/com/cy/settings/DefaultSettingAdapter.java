@@ -11,6 +11,16 @@ import android.widget.TextView;
 import com.cy.settingsview.R;
 
 public abstract class DefaultSettingAdapter extends BaseSettingAdapter {
+
+    public ImageView mIvIcon;
+    public TextView mTvTitle;
+    public TextView mTvContent;
+    public View mDivider;
+    public SwitchCompat mSwitchCompat;
+    public CheckBox mCheckBox;
+    public TextView mTvSubTitle;
+    public ImageView mIvArrow;
+
     public DefaultSettingAdapter(Activity activity) {
         super(activity);
     }
@@ -34,39 +44,40 @@ public abstract class DefaultSettingAdapter extends BaseSettingAdapter {
     public void bindView(int position, View itemView,
                          IGroupData groupData, ISubItemData subItemData) {
 
-        ImageView ivIcon=itemView.findViewById(R.id.ivIcon);
-        TextView tvTitle = itemView.findViewById(R.id.tvTitle);
-        TextView tvContent = itemView.findViewById(R.id.tvContent);
-        View divider=itemView.findViewById(R.id.vDivider);
-        SwitchCompat switchCompat = itemView.findViewById(R.id.switchCompat);
-        CheckBox checkBox=itemView.findViewById(R.id.checkbox);
-        TextView tvSubTitle = itemView.findViewById(R.id.tvSubTitle);
-        ImageView ivArrow=itemView.findViewById(R.id.ivArrow);
+         mIvIcon =itemView.findViewById(R.id.ivIcon);
+         mTvTitle = itemView.findViewById(R.id.tvTitle);
+         mTvContent = itemView.findViewById(R.id.tvContent);
+         mDivider =itemView.findViewById(R.id.vDivider);
+         mSwitchCompat = itemView.findViewById(R.id.switchCompat);
+         mCheckBox =itemView.findViewById(R.id.checkbox);
+         mTvSubTitle = itemView.findViewById(R.id.tvSubTitle);
+         mIvArrow =itemView.findViewById(R.id.ivArrow);
 
 
-        tvTitle.setText(((DefaultSubItemData) subItemData).title);
+        mTvTitle.setText(((DefaultSubItemData) subItemData).title);
         if (position == groupData.getSubItems().size() - 1) {
-            divider.setVisibility(View.GONE);
+            mDivider.setVisibility(View.GONE);
         }
         if (!TextUtils.isEmpty(((DefaultSubItemData) subItemData).content)){
-            tvContent.setVisibility(View.VISIBLE);
-            tvContent.setText(((DefaultSubItemData) subItemData).content);
+            mTvContent.setVisibility(View.VISIBLE);
+            mTvContent.setText(((DefaultSubItemData) subItemData).content);
         }
         if (((DefaultSubItemData) subItemData).drawableLeft>0){
-            ivIcon.setImageResource(((DefaultSubItemData) subItemData).drawableLeft);
-            ivIcon.setVisibility(View.VISIBLE);
+            mIvIcon.setImageResource(((DefaultSubItemData) subItemData).drawableLeft);
+            mIvIcon.setVisibility(View.VISIBLE);
         }
         if (((DefaultSubItemData) subItemData).showSwitch){
-            switchCompat.setVisibility(View.VISIBLE);
-            ivArrow.setVisibility(View.GONE);
+            mSwitchCompat.setVisibility(View.VISIBLE);
+            mIvArrow.setVisibility(View.GONE);
         }
         if (((DefaultSubItemData) subItemData).showCheckbox){
-            checkBox.setVisibility(View.VISIBLE);
-            ivArrow.setVisibility(View.GONE);
+            mCheckBox.setVisibility(View.VISIBLE);
+            mIvArrow.setVisibility(View.GONE);
+            mCheckBox.setChecked(((DefaultSubItemData) subItemData).checkboxChecked);
         }
         if (!TextUtils.isEmpty(((DefaultSubItemData) subItemData).subTitle)){
-            tvSubTitle.setVisibility(View.VISIBLE);
-            tvSubTitle.setText(((DefaultSubItemData) subItemData).subTitle);
+            mTvSubTitle.setVisibility(View.VISIBLE);
+            mTvSubTitle.setText(((DefaultSubItemData) subItemData).subTitle);
         }
 
         bindViewMore(position, itemView, groupData, subItemData);

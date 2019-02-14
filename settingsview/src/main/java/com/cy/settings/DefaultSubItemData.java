@@ -7,6 +7,7 @@ public class DefaultSubItemData implements ISubItemData {
     public int drawableLeft;
     public boolean showSwitch;
     public boolean showCheckbox;
+    public boolean checkboxChecked;
 
     private DefaultSubItemData() {
     }
@@ -66,6 +67,15 @@ public class DefaultSubItemData implements ISubItemData {
 
     public DefaultSubItemData setShowCheckbox(boolean showCheckbox) {
         this.showCheckbox = showCheckbox;
+        return this;
+    }
+
+    public boolean getCheckboxChecked() {
+        return checkboxChecked;
+    }
+
+    public DefaultSubItemData setCheckboxChecked(boolean checkboxChecked) {
+        this.checkboxChecked = checkboxChecked;
         return this;
     }
 }
