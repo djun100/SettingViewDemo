@@ -1,14 +1,14 @@
 package com.cy.settings;
 
 public class DefaultSubItemData implements ISubItemData {
-    public String title;
-    public String content;
-    public String subTitle;
-    public int drawableLeft;
-    public boolean showSwitch;
-    public boolean showCheckbox;
-    public boolean checkboxChecked;
-    public boolean showArrow;
+    private String title;
+    private String content;
+    private String subTitle;
+    private int drawableLeft;
+    private boolean showSwitch;
+    private boolean showCheckbox;
+    private boolean checkboxChecked;
+    private boolean showArrow;
 
     private DefaultSubItemData() {
     }

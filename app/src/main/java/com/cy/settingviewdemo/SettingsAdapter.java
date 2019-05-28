@@ -25,7 +25,8 @@ public class SettingsAdapter extends DefaultSettingAdapter {
         List<IGroupData> data = new ArrayList<>();
 
         IGroupData groupData = new DefaultGroupData();
-        groupData.addSubItem(DefaultSubItemData.create().setTitle("支付"));
+        groupData.addSubItem(DefaultSubItemData.create().setTitle("支付"))
+                .addSubItem(DefaultSubItemData.create().setTitle("国家地区").setShowArrow(true));
         data.add(groupData);
 
         IGroupData groupData2 = new DefaultGroupData();
@@ -52,7 +53,7 @@ public class SettingsAdapter extends DefaultSettingAdapter {
     public void bindViewMore(int position, View itemView,
                          IGroupData groupData, ISubItemData subItemData) {
 
-        if (((DefaultSubItemData) subItemData).title.equals("支付")){
+        if (((DefaultSubItemData) subItemData).getTitle().equals("支付")){
             itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {

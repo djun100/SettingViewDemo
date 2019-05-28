@@ -12,18 +12,19 @@ public class MainActivity extends BaseMVPActivity {
         super.onCreate(savedInstanceState);
         setTitle("demo");
         setContentView(R.layout.activity_main);
+    }
+
+    @Override
+    protected void onInit1Data() {
+
+    }
+
+    @Override
+    protected void onInit2View() {
         mSettingView=findViewById(R.id.mSettingView);
         mSettingView.setAdapter(new SettingsAdapter(this));
 
     }
 
-    @Override
-    protected void baseInit1Data() {
 
-    }
-
-    @Override
-    protected void baseInit2View() {
-
-    }
 }
