@@ -46,33 +46,33 @@ public abstract class DefaultSettingAdapter extends BaseSettingAdapter {
         ImageView mIvArrow =itemView.findViewById(R.id.ivArrow);
 
 
-        mTvTitle.setText(((DefaultSubItemData) subItemData).title);
+        mTvTitle.setText(((DefaultSubItemData) subItemData).getTitle());
         if (position == groupData.getSubItems().size() - 1) {
             mDivider.setVisibility(View.GONE);
         }
-        if (!TextUtils.isEmpty(((DefaultSubItemData) subItemData).content)){
+        if (!TextUtils.isEmpty(((DefaultSubItemData) subItemData).getContent())){
             mTvContent.setVisibility(View.VISIBLE);
-            mTvContent.setText(((DefaultSubItemData) subItemData).content);
+            mTvContent.setText(((DefaultSubItemData) subItemData).getContent());
         }
-        if (((DefaultSubItemData) subItemData).drawableLeft>0){
-            mIvIcon.setImageResource(((DefaultSubItemData) subItemData).drawableLeft);
+        if (((DefaultSubItemData) subItemData).getDrawableLeft()>0){
+            mIvIcon.setImageResource(((DefaultSubItemData) subItemData).getDrawableLeft());
             mIvIcon.setVisibility(View.VISIBLE);
         }
-        if (((DefaultSubItemData) subItemData).showSwitch){
+        if (((DefaultSubItemData) subItemData).getShowSwitch()){
             mSwitchCompat.setVisibility(View.VISIBLE);
             mIvArrow.setVisibility(View.GONE);
         }
-        if (((DefaultSubItemData) subItemData).showCheckbox){
+        if (((DefaultSubItemData) subItemData).getShowCheckbox()){
             mCheckBox.setVisibility(View.VISIBLE);
             mIvArrow.setVisibility(View.GONE);
-            mCheckBox.setChecked(((DefaultSubItemData) subItemData).checkboxChecked);
+            mCheckBox.setChecked(((DefaultSubItemData) subItemData).getCheckboxChecked());
         }
-        if (((DefaultSubItemData) subItemData).showArrow){
+        if (((DefaultSubItemData) subItemData).getShowArrow()){
             mIvArrow.setVisibility(View.VISIBLE);
         }
-        if (!TextUtils.isEmpty(((DefaultSubItemData) subItemData).subTitle)){
+        if (!TextUtils.isEmpty(((DefaultSubItemData) subItemData).getSubTitle())){
             mTvSubTitle.setVisibility(View.VISIBLE);
-            mTvSubTitle.setText(((DefaultSubItemData) subItemData).subTitle);
+            mTvSubTitle.setText(((DefaultSubItemData) subItemData).getSubTitle());
         }
 
         bindViewMore(position, itemView, groupData, subItemData);
