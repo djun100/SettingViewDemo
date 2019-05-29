@@ -1,10 +1,12 @@
 package com.cy.settings;
 
 import android.app.Activity;
+import android.text.TextUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
+import android.widget.TextView;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -30,14 +32,18 @@ public abstract class BaseSettingAdapter implements ISettings {
                     (LinearLayout) LayoutInflater.from(mActivity)
                             .inflate(getGroupLayoutRes(), null);
 
+            ViewGroup derectContainerView = groupContainerLayout
+                    .findViewById(getGroupContainerViewId());
+            if (!TextUtils.isEmpty(groupData.getGroupTitle())){
+                TextView tvTitle = groupContainerLayout.findViewById(getGroupTitleRes());
+                tvTitle.setVisibility(View.VISIBLE);
+                tvTitle.setText(groupData.getGroupTitle());
+            }
             for (int i = 0; i < groupData.getSubItems().size(); i++) {
                 ISubItemData subItem = groupData.getSubItems().get(i);
                 View subItemView = LayoutInflater.from(mActivity)
                         .inflate(getItemLayoutRes(), null);
                 bindView(i, subItemView, groupData, subItem);
-
-                ViewGroup derectContainerView = groupContainerLayout
-                        .findViewById(getGroupContainerViewId());
                 derectContainerView.addView(subItemView);
             }
             viewGroups.add(groupContainerLayout);

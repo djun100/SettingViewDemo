@@ -10,6 +10,7 @@ public interface ISettings {
     int getGroupLayoutRes();
     int getGroupContainerViewId();
     int getItemLayoutRes();
+    int getGroupTitleRes();
 
     /**
      * @param position

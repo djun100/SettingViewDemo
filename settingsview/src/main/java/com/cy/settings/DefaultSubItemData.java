@@ -1,14 +1,20 @@
 package com.cy.settings;
 
+import java.util.List;
+
 public class DefaultSubItemData implements ISubItemData {
     private String title;
     private String content;
     private String subTitle;
+    private String titleValue;
     private int drawableLeft;
+    private int drawableRight;
     private boolean showSwitch;
     private boolean showCheckbox;
     private boolean checkboxChecked;
     private boolean showArrow;
+    private String showSpinner;
+    private List<String> spinnerDatas;
 
     private DefaultSubItemData() {
     }
@@ -23,6 +29,15 @@ public class DefaultSubItemData implements ISubItemData {
 
     public DefaultSubItemData setTitle(String title) {
         this.title = title;
+        return this;
+    }
+
+    public String getTitleValue() {
+        return titleValue;
+    }
+
+    public DefaultSubItemData setTitleValue(String titleValue) {
+        this.titleValue = titleValue;
         return this;
     }
 
@@ -50,6 +65,15 @@ public class DefaultSubItemData implements ISubItemData {
 
     public DefaultSubItemData setDrawableLeft(int drawableLeft) {
         this.drawableLeft = drawableLeft;
+        return this;
+    }
+
+    public int getDrawableRight() {
+        return drawableRight;
+    }
+
+    public DefaultSubItemData setDrawableRight(int drawableRight) {
+        this.drawableRight = drawableRight;
         return this;
     }
 
@@ -88,4 +112,19 @@ public class DefaultSubItemData implements ISubItemData {
         this.showArrow = showArrow;
         return this;
     }
+
+    public String getShowSpinner() {
+        return showSpinner;
+    }
+
+    public DefaultSubItemData setShowSpinner(String showSpinner,List<String> spinnerDatas) {
+        this.showSpinner = showSpinner;
+        this.spinnerDatas = spinnerDatas;
+        return this;
+    }
+
+    public List<String> getSpinnerDatas() {
+        return spinnerDatas;
+    }
+
 }
