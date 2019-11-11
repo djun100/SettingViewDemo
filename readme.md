@@ -1,22 +1,27 @@
 <!--![](screenshot.jpg)-->
 <div align=center><img width="250"  src="screenshot.jpg"/></div>
+
 # 使用
+
 ## 1、布局
+
 ```
-    &lt;com.cy.settings.SettingsView
+    <com.cy.settings.SettingsView
         android:id="@+id/mSettingView"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"/&gt;
+        android:layout_height="wrap_content"/>
 ```
-## 2、
-java代码中
+## 2、java代码中
+
 ```
 SettingsView mSettingView;
 
         mSettingView=findViewById(R.id.mSettingView);
         mSettingView.setAdapter(new SettingsAdapter(this));        
 ```
+
 adapter
+
 ```
 public class SettingsAdapter extends DefaultSettingAdapter {
 
@@ -76,6 +81,5 @@ public class SettingsAdapter extends DefaultSettingAdapter {
             });
         }
     }
-
 }
 ```
