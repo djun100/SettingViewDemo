@@ -2,7 +2,16 @@
 <div align=center><img width="250"  src="screenshot.jpg"/></div>
 
 # 使用
+```
+allprojects {
+    repositories {
+        ...
+        maven { url "https://jitpack.io" }
+    }
+}
 
+implementation 'com.github.djun100:SettingsView:7d43e11'
+```
 ## 1、布局
 
 ```
