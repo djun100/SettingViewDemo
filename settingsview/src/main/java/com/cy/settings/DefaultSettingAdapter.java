@@ -13,7 +13,6 @@ import com.cy.view.popupwindow.PopUpAdapter;
 import com.cy.view.popupwindow.PopupItem;
 import com.cy.view.popupwindow.UtilPopup;
 
-import java.util.Date;
 import java.util.List;
 
 public abstract class DefaultSettingAdapter extends BaseSettingAdapter {
@@ -77,6 +76,9 @@ public abstract class DefaultSettingAdapter extends BaseSettingAdapter {
         if (((DefaultSubItemData) subItemData).getShowSwitch()){
             mSwitchCompat.setVisibility(View.VISIBLE);
             mIvArrow.setVisibility(View.GONE);
+            if (((DefaultSubItemData) subItemData).getDefaultSwitchOn()){
+                mSwitchCompat.setChecked(true);
+            }
         }
         if (((DefaultSubItemData) subItemData).getShowCheckbox()){
             mCheckBox.setVisibility(View.VISIBLE);
