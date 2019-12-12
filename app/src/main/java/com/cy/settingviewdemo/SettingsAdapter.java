@@ -2,13 +2,14 @@ package com.cy.settingviewdemo;
 
 import android.app.Activity;
 import android.view.View;
-import android.widget.Toast;
 
+import com.cy.io.Log;
 import com.cy.settings.DefaultGroupData;
 import com.cy.settings.DefaultSettingAdapter;
 import com.cy.settings.DefaultSubItemData;
 import com.cy.settings.IGroupData;
 import com.cy.settings.ISubItemData;
+import com.cy.settings.SubItemView;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -62,7 +63,8 @@ public class SettingsAdapter extends DefaultSettingAdapter {
                 .addSubItem(DefaultSubItemData.create()
                         .setTitle("流浪地球.rmvb")
                         .setContent("/Users/cy/cy/projects/android/CommonLayout/app/src/main/java/com/cy/commonlayout/MainActivity.java")
-                        .setShowCheckbox(true));
+                        .setShowCheckbox(true)
+                );
         data.add(groupData2);
 
         return data;
@@ -70,14 +72,15 @@ public class SettingsAdapter extends DefaultSettingAdapter {
 
 
     @Override
-    public void bindViewMore(int position, View itemView,
+    public void bindViewMore(int position, final SubItemView itemView,
                              IGroupData groupData, ISubItemData subItemData) {
 
-        if (((DefaultSubItemData) subItemData).getTitle().equals("支付")) {
+        if (((DefaultSubItemData) subItemData).getTitle().equals("流浪地球.rmvb")) {
             itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    Toast.makeText(mActivity, "支付中...", Toast.LENGTH_SHORT).show();
+                    Log.i();
+                    itemView.getCheckbox().setChecked(!itemView.getCheckbox().isChecked());
                 }
             });
         }

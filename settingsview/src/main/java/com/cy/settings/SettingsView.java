@@ -29,6 +29,7 @@ public class SettingsView extends ScrollView {
 
     private void init() {
         LayoutInflater.from(getContext()).inflate(R.layout.setting_container,this);
+        setClickable(true);
         mLinearLayout=findViewById(R.id.mllInternalSettingsContainer);
 
         List<ViewGroup> viewGroups = mSettings.build();

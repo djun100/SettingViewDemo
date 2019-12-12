@@ -41,8 +41,9 @@ public abstract class BaseSettingAdapter implements ISettings {
             }
             for (int i = 0; i < groupData.getSubItems().size(); i++) {
                 ISubItemData subItem = groupData.getSubItems().get(i);
-                View subItemView = LayoutInflater.from(mActivity)
-                        .inflate(getItemLayoutRes(), null);
+//                View subItemView = LayoutInflater.from(mActivity)
+//                        .inflate(getItemLayoutRes(), null);
+                SubItemView subItemView=new SubItemView(mActivity);
                 bindView(i, subItemView, groupData, subItem);
                 derectContainerView.addView(subItemView);
             }

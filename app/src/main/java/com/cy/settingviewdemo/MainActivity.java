@@ -23,7 +23,6 @@ public class MainActivity extends BaseMVPActivity {
     protected void onInit2View() {
         mSettingView=findViewById(R.id.mSettingView);
         mSettingView.setAdapter(new SettingsAdapter(this));
-
     }
 
 

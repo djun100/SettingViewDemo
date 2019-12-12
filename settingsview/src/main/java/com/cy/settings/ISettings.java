@@ -1,6 +1,5 @@
 package com.cy.settings;
 
-import android.view.View;
 import android.view.ViewGroup;
 
 import java.util.List;
@@ -18,6 +17,6 @@ public interface ISettings {
      * @param groupData
      * @param subItemData
      */
-    void bindView(int position, View itemView,IGroupData groupData ,ISubItemData subItemData);
+    void bindView(int position, SubItemView itemView,IGroupData groupData ,ISubItemData subItemData);
     List<ViewGroup> build();
 }

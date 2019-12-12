@@ -43,7 +43,7 @@ public abstract class DefaultSettingAdapter extends BaseSettingAdapter {
     }
 
     @Override
-    public void bindView(final int position, View itemView,
+    public void bindView(final int position, SubItemView itemView,
                          IGroupData groupData, final ISubItemData subItemData) {
 
         ImageView mIvIcon =itemView.findViewById(R.id.ivIcon);
@@ -134,6 +134,10 @@ public abstract class DefaultSettingAdapter extends BaseSettingAdapter {
      * @param groupData
      * @param subItemData
      */
-    public abstract void bindViewMore(int position, View itemView,
+    public abstract void bindViewMore(int position, SubItemView itemView,
                                       IGroupData groupData, ISubItemData subItemData);
+
+    public void notifyDatasetChanged(){
+
+    }
 }
