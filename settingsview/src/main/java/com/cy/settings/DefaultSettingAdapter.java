@@ -63,6 +63,7 @@ public abstract class DefaultSettingAdapter extends BaseSettingAdapter {
         }
         if (!TextUtils.isEmpty(((DefaultSubItemData) subItemData).getTitleValue())){
             mTvTitleValue.setVisibility(View.VISIBLE);
+            mTvSubTitle.setVisibility(View.GONE);
             mTvTitleValue.setText(((DefaultSubItemData) subItemData).getTitleValue());
         }
         if (!TextUtils.isEmpty(((DefaultSubItemData) subItemData).getContent())){

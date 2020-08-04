@@ -45,16 +45,6 @@
                 android:textColor="@android:color/black"
                 android:textSize="16dp" />
 
-            <TextView
-                android:layout_marginLeft="30dp"
-                android:id="@+id/tvTitleValue"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                tools:text="500M"
-                tools:visibility="visible"
-                android:visibility="gone"
-                android:textColor="@android:color/black"
-                android:textSize="16dp" />
         </LinearLayout>
 
         <TextView
@@ -86,7 +76,11 @@
             android:layout_marginLeft="10dp"
             android:visibility="gone"
             tools:visibility="visible"
+            android:background="@drawable/switch_bg"
             app:showText="false"
+            app:trackTint="#00000000"
+            app:thumbTint="#00000000"
+
             />
 
         <CheckBox
@@ -121,6 +115,19 @@
         android:visibility="gone"
         android:drawablePadding="5dp"
         tools:visibility="visible" />
+
+    <TextView
+        android:layout_marginLeft="30dp"
+        android:id="@+id/tvTitleValue"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_toLeftOf="@+id/flRight"
+        tools:text="500M"
+        tools:visibility="visible"
+        android:visibility="gone"
+        android:textColor="#3D3A54"
+        android:textSize="17dp" />
 
     <View
         android:id="@+id/vDivider"
